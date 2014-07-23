@@ -68,7 +68,7 @@ public class ProductDetailActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
-				_iapHelper.purchase(getResources().getString(_productInfo.getId()), PURCHASE_REQUEST_CODE, _listener);
+				_iapHelper.purchase(getResources().getString(_productInfo.getId()), "custom_data_test", PURCHASE_REQUEST_CODE, _listener);
 			}
 			
 		});
