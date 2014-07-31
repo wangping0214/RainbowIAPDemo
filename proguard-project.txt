@@ -18,3 +18,26 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+# wangyin.
+-keep class com.wangyin.** { *; } 
+-dontwarn com.wangyin.**
+
+##########################################################################
+# Gson
+# Gson uses generic type information stored in a class file when working with fields. Proguard  
+# removes such information by default, so configure it to keep all of it.  
+-keepattributes Signature  
+  
+# Gson specific classes  
+-keep class sun.misc.Unsafe { *; }  
+-keep class com.google.gson.stream.** { *; }  
+-keep class com.google.gson.examples.android.model.** { *; }   
+-keep class com.google.gson.** { *;}  
+-dontwarn com.google.gson.**
+  
+## end of Gson
+##########################################################################
+
+
+-keep public class com.rainbow.MainActivity
