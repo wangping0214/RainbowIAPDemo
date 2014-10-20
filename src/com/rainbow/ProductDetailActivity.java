@@ -25,7 +25,14 @@ public class ProductDetailActivity extends Activity
 		@Override
 		public void onPurchaseFinished(IAPResult result, Purchase purchase)
 		{
-			Toast.makeText(ProductDetailActivity.this, result.getMessage(), Toast.LENGTH_SHORT).show();
+			if (result.isSuccess())
+			{
+				Toast.makeText(ProductDetailActivity.this, "支付成功", Toast.LENGTH_LONG).show();
+			}
+			else
+			{
+				Toast.makeText(ProductDetailActivity.this, "支付失败", Toast.LENGTH_LONG).show();
+			}
 		}
 	};
 	private ProductInfo _productInfo;
